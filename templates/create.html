@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">1. Race</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">2. Class</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">3. Abilities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">4. Description</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">5. Equipment</a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="container p-5">
+  <form>
+    <div class="mb-3">
+        <label for="characterName" class="form-label"><h6>Character Name</h6></label>
+        <input type="text" class="form-control" id="characterName">
+    </div>
+
+    <div class="mb-3">
+      <h6>Dice Rolling</h6>
+      <p>Enables digital dice rolling for this character</p>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="dicerolling" checked>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <h6>Optional Features</h6>
+      <p>Allow or restrict optional features for this character.</p>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="optionalfeatures">
+        <label class="form-check-label" for="optionalfeatures">Optional Features</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="customorigin">
+        <label class="form-check-label" for="customorigin">Customize Your Origin</label>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+        <h6>Advancement Type</h6>
+        <p>Story-based character progression / XP-based character progression</p>
+        <select class="form-select" aria-label="Milestone">
+          <option selected>Milestone</option>
+          <option value="xp">XP</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <h6>Hit Point Type</h6>
+        <p>When leveling up, increase hit points by the fixed value for your chosen class or manually enter a rolled value</p>
+        <select class="form-select" aria-label="Fixed">
+            <option selected>Fixed</option>
+            <option value="manual">Manual</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <h6>Use Prerequisites</h6>
+        <p>Allow or restrict choices based on rule prerequisites for the following for this character</p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="feats">
+            <label class="form-check-label" for="feats">Feats</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="multiclass">
+            <label class="form-check-label" for="multiclass">Multiclass Requirements</label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <h6>Show Level-Scaled Spells</h6>
+        <p>Display and highlight available spells to cast with higher level spell slots</p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="levelscaling">
+            <label class="form-check-label" for="levelscaling"></label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <h6>Encumbrance Type</h6>
+        <p>Use the standard encumbrance rules / Disable the encumbrance display / Use the more detailed rules for encumbrance</p>
+        <select class="form-select">
+            <option selected>Use Encumbrance</option>
+            <option value="no-encumbrance">No Encumbrance</option>
+            <option value="v-encumbrance">Variant Encumbrance</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <h6>Ignore Coin Weight</h6>
+        <p>Coins do not count against your total weight carried (50 coins weigh 1 lb.)</p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="coinweight">
+            <label class="form-check-label" for="coinweight"></label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <h6>Ability Score/Modifier Display</h6>
+        <p>Reverse the arrangement of ability modifiers and scores</p>
+        <select class="form-select">
+            <option selected>Modifiers Top</option>
+            <option value="scores-top">Scores Top</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

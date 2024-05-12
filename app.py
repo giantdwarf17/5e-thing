@@ -6,5 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/create")
+def create():
+    return render_template('create.html')
+
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False, port=5000, host="0.0.0.0")
+    app.run(debug=True, use_reloader=True, port=5000, host="0.0.0.0")

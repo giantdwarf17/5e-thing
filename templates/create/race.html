@@ -1,5 +1,36 @@
 {% extends '/create/base.html' %}
 
 {% block create %}
+<div class="container">
+  <div class="row row-cols-1">
+    <div class="col">
+      <div class="input-group rounded mt-2 ">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+          aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+    </div>
 
+    {% for race in races %}
+    <div class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ race['name'] }}</h5>
+              <p class="card-text"></p>
+              <p class="card-text"><small class="text-muted">{{ race['document_title'] }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

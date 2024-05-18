@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create' %} active {% endif %}" href="/create">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create/race' %} active {% endif %}"
+          href="/create/race">1. Race</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create/class' %} active {% endif %}"
+          href="/create/class">2. Class</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create/abilities' %} active {% endif %}"
+          href="/create/abilities">3. Abilities</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create/description' %} active {% endif %}"
+          href="/create/description">4. Description</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if url_for(request.endpoint) == '/create/equipment' %} active {% endif %}"
+          href="/create/equipment">5. Equipment</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% block create %} {% endblock %}
+
+{% endblock %}

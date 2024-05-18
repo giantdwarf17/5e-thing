@@ -8,7 +8,27 @@ def index():
 
 @app.route("/create")
 def create():
-    return render_template('create.html')
+    return render_template('/create/index.html')
+
+@app.route("/create/race")
+def create_race():
+    return render_template('/create/race.html')
+
+@app.route("/create/class")
+def create_class():
+    return render_template('/create/class.html')
+
+@app.route("/create/abilities")
+def create_abilities():
+    return render_template('/create/abilities.html')
+
+@app.route("/create/description")
+def create_description():
+    return render_template('/create/description.html')
+
+@app.route("/create/equipment")
+def create_equipment():
+    return render_template('/create/equipment.html')
 
 @app.route("/character")
 def character():

@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -13,12 +14,14 @@ def create():
 
 @app.route("/create/race")
 def create_race():
-    races = requests.get('https://api.open5e.com/v1/races/?slug__in=&slug__iexact=&slug=&name__iexact=&name=&desc__iexact=&desc=&desc__in=&desc__icontains=&document__slug__iexact=wotc-srd&document__slug=&document__slug__in=&asi_desc__iexact=&asi_desc=&asi_desc__icontains=&age__iexact=&age=&age__icontains=&alignment__iexact=&alignment=&alignment__icontains=&size__iexact=&size=&size__icontains=&speed_desc__iexact=&speed_desc=&speed_desc__icontains=&languages__iexact=&languages=&languages__icontains=&vision__iexact=&vision=&vision__icontains=&traits__iexact=&traits=&traits__icontains=&document__slug__not_in=').json()['results']
+    with open("races.json", "r") as f:
+        races = json.load(f)['results']
     return render_template('/create/race.html', races=races)
 
 @app.route("/create/class")
 def create_class():
-    classes = requests.get('https://api.open5e.com/v1/classes/?slug__in=&slug__iexact=&slug=&name__iexact=&name=&desc__iexact=&desc=&desc__in=&desc__icontains=&hit_dice__iexact=&hit_dice=&hit_dice__in=&hp_at_1st_level__iexact=&hp_at_1st_level=&hp_at_1st_level__icontains=&hp_at_higher_levels__iexact=&hp_at_higher_levels=&hp_at_higher_levels__icontains=&prof_armor__iexact=&prof_armor=&prof_armor__icontains=&prof_weapons__iexact=&prof_weapons=&prof_weapons__icontains=&prof_tools__iexact=&prof_tools=&prof_tools__icontains=&prof_skills__iexact=&prof_skills=&prof_skills__icontains=&equipment__iexact=&equipment=&equipment__icontains=&spellcasting_ability__iexact=&spellcasting_ability=&spellcasting_ability__icontains=&subtypes_name__iexact=&subtypes_name=&subtypes_name__icontains=&document__slug__iexact=wotc-srd&document__slug=&document__slug__in=&document__slug__not_in=').json()['results']
+    with open("classes.json", "r") as f:
+        classes = json.load(f)['results']
     return render_template('/create/class.html', classes=classes)
 
 @app.route("/create/abilities")

@@ -30,7 +30,9 @@ def create_abilities():
 
 @app.route("/create/description")
 def create_description():
-    return render_template('/create/description.html')
+    with open("backgrounds.json", "r") as f:
+        backgrounds = json.load(f)['results']
+    return render_template('/create/description.html', backgrounds=backgrounds)
 
 @app.route("/create/equipment")
 def create_equipment():

@@ -2,4 +2,21 @@
 
 {% block create %}
 
+<div class="container p-5">
+    <form>
+      <div class="mb-3">
+        <label for="characterName" class="form-label">
+          <h6>Character Name</h6>
+        </label>
+        <input type="text" class="form-control" id="characterName">
+      </div>
+      <h3>Background</h3>
+      <select class="form-select" aria-label="Ability Score Method">
+        <option selected>-- Choose an Option --</option>
+        {% for background in backgrounds %}
+        <option value="{{ background['slug'] }}">{{ background['name'] }}</option>
+        {% endfor %}
+    </select>
+    </form>
+</div>
 {% endblock %}

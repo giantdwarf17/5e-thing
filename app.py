@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 import requests
 import json
 
@@ -14,13 +14,13 @@ def create():
 
 @app.route("/create/race")
 def create_race():
-    with open("races.json", "r") as f:
+    with open("races.json", "r", encoding="utf8") as f:
         races = json.load(f)['results']
     return render_template('/create/race.html', races=races)
 
 @app.route("/create/class")
 def create_class():
-    with open("classes.json", "r") as f:
+    with open("classes.json", "r", encoding="utf8") as f:
         classes = json.load(f)['results']
     return render_template('/create/class.html', classes=classes)
 
@@ -30,7 +30,7 @@ def create_abilities():
 
 @app.route("/create/description")
 def create_description():
-    with open("backgrounds.json", "r") as f:
+    with open("backgrounds.json", "r", encoding="utf8") as f:
         backgrounds = json.load(f)['results']
     return render_template('/create/description.html', backgrounds=backgrounds)
 
@@ -41,6 +41,10 @@ def create_equipment():
 @app.route("/character")
 def character():
     return render_template('charactersheet.html')
+
+@app.route("/backgrounds.json")
+def backgrounds():
+    return send_file('backgrounds.json')
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True, port=5000, host="0.0.0.0")

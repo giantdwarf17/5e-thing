@@ -18,7 +18,8 @@
       {% endfor %}
     </select>
     <div>
-      <p id="background_desc"></p>
+      <p id="background_desc">
+      <p>
     </div>
   </form>
 
@@ -32,7 +33,7 @@
       }
 
       else {
-        document.getElementById('background_desc').innerHTML = backgrounds['results'][background.selectedIndex - 1]['desc'];
+        document.getElementById('background_desc').innerHTML = marked.parse(backgrounds['results'][background.selectedIndex - 1]['desc']);
       }
     });
 

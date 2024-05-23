@@ -33,7 +33,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="{{ race['slug'] }}Modal" tabindex="-1" aria-labelledby="{{ race['slug'] }}ModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{ race['slug'] }}Modal" tabindex="-1" aria-labelledby="{{ race['slug'] }}ModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -41,9 +42,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <md-block>{{ race['desc'] }}</md-block>
-            <md-block>{{ race['asi_desc'] }}</md-block>
-            <md-block>{{ race['traits'] }}</md-block>
+            <p class="md">{{ race['desc'] }}</p>
+            <p class="md">{{ race['asi_desc'] }}</p>
+            <p class="md">{{ race['traits'] }}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

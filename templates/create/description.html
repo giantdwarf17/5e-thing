@@ -18,40 +18,9 @@
       {% endfor %}
     </select>
     <div>
-      <p id="background_desc">
-      <p>
+      <p class="md" id="background_desc"></p>
+      <p><b>Skill Proficiencies: </b><span id="skills"></span></p>
     </div>
   </form>
-
-
-  <script>
-    var background = document.getElementById("background");
-    background.addEventListener("change", function () {
-      console.log(background.selectedIndex);
-      if (background.selectedIndex == 0) {
-        document.getElementById('background_desc').innerHTML = "";
-      }
-
-      else {
-        document.getElementById('background_desc').innerHTML = marked.parse(backgrounds['results'][background.selectedIndex - 1]['desc']);
-      }
-    });
-
-    function fetchJSONData() {
-      fetch("/backgrounds.json")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error
-              (`HTTP error! Status: ${res.status}`);
-          }
-          return res.json();
-        })
-        .then((data) =>
-          backgrounds = data)
-        .catch((error) =>
-          console.error("Unable to fetch data:", error));
-    }
-    fetchJSONData();
-  </script>
 </div>
 {% endblock %}

@@ -1,22 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    .card-header {
+        font-size: 12px;
+    }
+
+    .card-footer {
+        font-size: 12px;
+    }
+</style>
 
 <div class="container mt-5 px-5">
     <div class="row">
         <div class="col">
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Character Name</h5>
-                      <p class="card-text">Race Level Class</p>
-                      <p class="card-text"><small class="text-body-secondary">Player Level</small></p>
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
                     </div>
-                  </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Character Name</h5>
+                            <p class="card-text">Race Level Class</p>
+                            <p class="card-text"><small class="text-body-secondary">Player Level</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,88 +37,90 @@
     </div>
 
     <div class="row text-center">
-        <div class="col">
+        <div class="col-6">
             <div class="card-group">
-                <div class="card" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
-                        Strength
+                        Stength
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+4</li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
 
-                <div class="card" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
                         Dexterity
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+4</li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
 
-                <div class="card" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
                         Constitution
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+4</li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
 
-                <div class="card" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
                         Intelligence
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+4</li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
 
-                <div class="card" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
                         Wisdom
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+4</li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                    <div class="card-header">
                         Charisma
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button class="btn btn-outline-dark">+4</button></li>
-                        <li class="list-group-item">20</li>
-                    </ul>
+                    <p class="card-text">+4</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">20</small>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col">
+        <div class="col-3">
             <div class="card-group">
                 <div class="card">
                     <div class="card-header" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                        Proficiency Bonus
+                        Proficiency
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">+3</li>
-                    </ul>
+                    <p class="card-text">+3</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Bonus</small>
+                    </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                        Walking Speed
+                        Walking
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">30 ft</li>
-                    </ul>
+                    <p class="card-text">30 ft</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Speed</small>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -121,12 +132,16 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col-3">
             <div class="card-group">
                 <div class="card">
-                    <button class="btn btn-success">Heal</button>
-                    <input>
-                    <button class="btn btn-danger">Damage</button>
+                    <div class="card-header">
+                        <button class="btn btn-outline-success btn-sm">Heal</button>
+                    </div>
+                    <p class="card-text"><input></p>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-danger btn-sm">Damage</button>
+                    </div>
                 </div>
 
                 <div class="card">
@@ -154,6 +169,11 @@
     </div>
 </div>
 
+<nav class="navbar fixed-bottom">
+    <div class="container-fluid">
+        <button class="btn btn-outline-success btn-lg">Roll</button>
+    </div>
+</nav>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">

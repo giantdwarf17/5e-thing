@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@3d-dice/dice-box": "^1.0.12"
+  },
+  "name": "5e-thing",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

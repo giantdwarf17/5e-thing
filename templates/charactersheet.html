@@ -2,37 +2,39 @@
 
 {% block content %}
 <style>
-/* character-sheet.css */
-/* @media (min-width: 540px) {
+    /* character-sheet.css */
+    /* @media (min-width: 540px) {
     .container{
         max-width: 70%;
     }
 } */
 
-body {
-    font-family: 'Georgia', serif;
-}
+    body {
+        font-family: 'Georgia', serif;
+        background-image: '/static/background.jpg'
+    }
 
-.card-header, .card-footer {
-    font-size: 12px;
-}
+    .card-header,
+    .card-footer {
+        font-size: 12px;
+    }
 
-.card-text {
-    font-size: 14px;
-}
+    .card-text {
+        font-size: 14px;
+    }
 
-button {
-    margin-right: 10px;
-}
+    button {
+        margin-right: 10px;
+    }
 
-.table th, .table td {
-    font-size: 14px;
-}
+    .table th,
+    .table td {
+        font-size: 14px;
+    }
 
-.nav-tabs .nav-link {
-    font-size: 14px;
-}
-
+    .nav-tabs .nav-link {
+        font-size: 14px;
+    }
 </style>
 
 <div class="container mt-5">
@@ -157,40 +159,37 @@ button {
         </div>
 
         <div class="col-3">
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-header">
+            <div class="card">
+                <div class="card-header">
+                    Hit Points
+                </div>
+                <p class="card-text">
+                <div class="row row-cols-4">
+                    <div class="col">
                         <button class="btn btn-outline-success btn-sm">Heal</button>
-                    </div>
-                    <p class="card-text"><input></p>
-                    <div class="card-footer">
+                        <div class="input-group input-group-lg">
+                            <input class="form-control">
+                        </div>
                         <button class="btn btn-outline-danger btn-sm">Damage</button>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        Current
+                    <div class="col">
+                        <h6>Current</h6>
+                        <p><b>32</b></p>
                     </div>
-                    <p>32</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        Max
+                    <div class="col">
+                        <h6>Max</h6>
+                        <p><b>32</b></p>
                     </div>
-                    <p>32</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        Temp
+                    <div class="col">
+                        <h6>Temp</h6>
+                        <p><b>--</b></p>
                     </div>
-                    <p>--</p>
                 </div>
+                </p>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col">
             <div class="card">
@@ -303,38 +302,38 @@ button {
                 <div class="card-body">
                     <table class="table table-borderless">
                         <thead>
-                        <tr>
-                            <th scope="col">Prof</th>
-                            <th scope="col">Mod</th>
-                            <th scope="col">Skill</th>
-                            <th scope="col">Bonus</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">Prof</th>
+                                <th scope="col">Mod</th>
+                                <th scope="col">Skill</th>
+                                <th scope="col">Bonus</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td>Dex</td>
-                            <td>Acrobatics</td>
-                            <td>+3</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Wis</td>
-                            <td>Animal Handling</td>
-                            <td>+3</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Int</td>
-                            <td>Arcana</td>
-                            <td>+3</td>
-                        </tr>
+                            <tr>
+                                <td></td>
+                                <td>Dex</td>
+                                <td>Acrobatics</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Wis</td>
+                                <td>Animal Handling</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Int</td>
+                                <td>Arcana</td>
+                                <td>+3</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        
+
         <div class="col">
             <div class="card-group">
                 <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
@@ -357,9 +356,9 @@ button {
                         Defences
                     </div>
                     <p class="card-text">
-                        <ul>
-                            <li>Magical Sleep</li>
-                        </ul>
+                    <ul>
+                        <li>Magical Sleep</li>
+                    </ul>
                     </p>
                 </div>
                 <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
@@ -367,29 +366,35 @@ button {
                         Conditions
                     </div>
                     <p class="card-text">
-                        <ul>
-                            <li>Add Active Conditions</li>
-                        </ul>
+                    <ul>
+                        <li>Add Active Conditions</li>
+                    </ul>
                     </p>
                 </div>
             </div>
             <div class="card">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                        <button class="nav-link active" id="actions-tab" data-bs-toggle="tab" data-bs-target="#actions"
+                            type="button" role="tab" aria-controls="actions" aria-selected="true">Actions</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                        <button class="nav-link" id="spells-tab" data-bs-toggle="tab" data-bs-target="#spells"
+                            type="button" role="tab" aria-controls="spells" aria-selected="false">Spells</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                        <button class="nav-link" id="inventory-tab" data-bs-toggle="tab" data-bs-target="#inventory"
+                            type="button" role="tab" aria-controls="inventory" aria-selected="false">Inventory</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                </div> 
+                    <div class="tab-pane fade show active" id="actions" role="tabpanel" aria-labelledby="actions-tab">
+                        Actions
+                    </div>
+                    <div class="tab-pane fade" id="spells" role="tabpanel" aria-labelledby="spells-tab">Spells</div>
+                    <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">Inventory
+                    </div>
+                </div>
             </div>
         </div>
     </div>

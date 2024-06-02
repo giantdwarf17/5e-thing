@@ -1,42 +1,9 @@
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import DiceBox from "@3d-dice/dice-box";
 
-document.querySelectorAll('.md').forEach((element) => {
-  let currentContent = element.innerHTML;
-  element.innerHTML = marked.parse(currentContent);
-});
+// Create an instance of DiceBox
+const diceBox = new DiceBox();
 
-if (window.location.pathname == '/create/description') {
-  let backgrounds;
+// Generate a random roll of a six-sided die
+const result = diceBox.roll();
 
-  function fetchJSONData() {
-    fetch("/backgrounds.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error
-            (`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) =>
-        backgrounds = data)
-      .catch((error) =>
-        console.error("Unable to fetch data:", error));
-  }
-
-  var background = document.querySelector("#background");
-
-  fetchJSONData();
-
-  background.addEventListener("change", function () {
-    console.log(background.selectedIndex);
-    if (background.selectedIndex == 0) {
-      document.querySelector('#background_desc').innerHTML = "";
-      document.querySelector('#skills').innerHTML = "";
-    }
-
-    else {
-      document.querySelector('#background_desc').innerHTML = marked.parse(backgrounds['results'][background.selectedIndex - 1]['desc']);
-      document.querySelector('#skills').innerHTML = backgrounds['results'][background.selectedIndex - 1]['skill_proficiencies']
-    }
-  });
-}
+console.log(result); // Output: A random number between 1 and 6

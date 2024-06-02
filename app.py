@@ -41,7 +41,9 @@ def create_equipment():
 
 @app.route("/character")
 def character():
-    return render_template('charactersheet.html')
+    f = open('./characters/character.json')
+    character_info = json.load(f)
+    return render_template('charactersheet.html', character_info=character_info)
 
 @app.route("/backgrounds.json")
 def backgrounds():

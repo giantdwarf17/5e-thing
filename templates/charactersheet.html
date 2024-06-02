@@ -47,9 +47,13 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Character Name</h5>
-                            <p class="card-text">Race Level Class</p>
-                            <p class="card-text"><small class="text-body-secondary">Player Level</small></p>
+                            <h5 class="card-title">{{ character_info['name'] }}</h5>
+                            <p class="card-text">{{ character_info['race'] }} 
+                                {% for class in character_info['class'] %}
+                                    {{ class['name'] }} {{ class['level'] }}
+                                {% endfor %}
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">{{ character_info['level'] }}</small></p>
                         </div>
                     </div>
                 </div>
@@ -65,65 +69,17 @@
     <div class="row text-center">
         <div class="col-6">
             <div class="card-group">
+                {% for ability_score in character_info["ability_scores"] %}
                 <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
-                        Stength
+                        {{ ability_score.capitalize() }}
                     </div>
-                    <p class="card-text">+4</p>
+                    <p class="card-text">{{ (character_info["ability_scores"][ability_score] - 10) // 2 }}</p>
                     <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
+                        <small class="text-body-secondary">{{ character_info["ability_scores"][ability_score] }}</small>
                     </div>
                 </div>
-
-                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                    <div class="card-header">
-                        Dexterity
-                    </div>
-                    <p class="card-text">+4</p>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
-                    </div>
-                </div>
-
-                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                    <div class="card-header">
-                        Constitution
-                    </div>
-                    <p class="card-text">+4</p>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
-                    </div>
-                </div>
-
-                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                    <div class="card-header">
-                        Intelligence
-                    </div>
-                    <p class="card-text">+4</p>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
-                    </div>
-                </div>
-
-                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                    <div class="card-header">
-                        Wisdom
-                    </div>
-                    <p class="card-text">+4</p>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
-                    </div>
-                </div>
-
-                <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-                    <div class="card-header">
-                        Charisma
-                    </div>
-                    <p class="card-text">+4</p>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">20</small>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -133,7 +89,7 @@
                     <div class="card-header" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                         Proficiency
                     </div>
-                    <p class="card-text">+3</p>
+                    <p class="card-text">{{ character_info['proficiency_bonus']}}</p>
                     <div class="card-footer">
                         <small class="text-body-secondary">Bonus</small>
                     </div>
@@ -143,7 +99,7 @@
                     <div class="card-header" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                         Walking
                     </div>
-                    <p class="card-text">30 ft</p>
+                    <p class="card-text">{{ character_info['walking_speed']}} ft</p>
                     <div class="card-footer">
                         <small class="text-body-secondary">Speed</small>
                     </div>
@@ -174,15 +130,15 @@
                     </div>
                     <div class="col">
                         <h6>Current</h6>
-                        <p><b>32</b></p>
+                        <p><b>{{ character_info["health"]["current"] }}</b></p>
                     </div>
                     <div class="col">
                         <h6>Max</h6>
-                        <p><b>32</b></p>
+                        <p><b>{{ character_info["health"]["max"] }}</b></p>
                     </div>
                     <div class="col">
                         <h6>Temp</h6>
-                        <p><b>--</b></p>
+                        <p><b>{{ character_info["health"]["temp"] }}</b></p>
                     </div>
                 </div>
                 </p>
@@ -198,58 +154,18 @@
                 </div>
                 <div class="card-body">
                     <div class="row row-cols-2">
+                        {% for skill in character_info["saving_throws"] %}
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                    <p>STR</p>
+                                    <p>{{ skill }}</p>
                                 </div>
                                 <div class="col">
-                                    <p>+1</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>DEX</p>
-                                </div>
-                                <div class="col">
-                                    <p>+1</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>CON</p>
-                                </div>
-                                <div class="col">
-                                    <p>+1</p>
+                                    <p>{{ character_info["saving_throws"][skill] }}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <p>INT</p>
-                                </div>
-                                <div class="col">
-                                    <p>+1</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>WIS</p>
-                                </div>
-                                <div class="col">
-                                    <p>+1</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <p>CHA</p>
-                                </div>
-                                <div class="col">
-                                    <p>+1</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -262,12 +178,14 @@
                     <div class="row">
                         <div class="col">
                             <div class="row">
+                                {% for sense in character_info['senses'] %}
                                 <div class="col">
-                                    <p>14</p>
+                                    <p>{{ character_info['senses'][sense] }}</p>
                                 </div>
                                 <div class="col">
-                                    <p>Passive Wisdom</p>
+                                    <p>{{ sense }}</p>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -279,17 +197,15 @@
                     Proficiencies & Languages
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title">Armor</h6>
-                    <p>None</p>
-                    <hr>
-                    <h6 class="card-title">Weapons</h6>
-                    <p>Crossbow, Dagger</p>
-                    <hr>
-                    <h6 class="card-title">Tools</h6>
-                    <p>None</p>
-                    <hr>
-                    <h6 class="card-title">Languages</h6>
-                    <p>Commnon, Abyssal</p>
+                    {% for proficiency in character_info['proficiencies'] %}
+                        <h6 class="card-title">{{ proficiency.capitalize() }}</h6>
+                        {% if character_info['proficiencies'][proficiency] %}
+                        <p>{{ ', '.join(character_info['proficiencies'][proficiency]) }}</p>
+                        {% else %}
+                        <p>None</p>
+                        {% endif %}
+                        <hr>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -310,24 +226,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for skill in character_info['skills'] %}
                             <tr>
-                                <td></td>
-                                <td>Dex</td>
-                                <td>Acrobatics</td>
-                                <td>+3</td>
+                                <td>{{ character_info['skills'][skill]['proficient'] }}</td>
+                                <td>{{ character_info['skills'][skill]['modifier'] }}</td>
+                                <td>{{ skill }}</td>
+                                <td>+{{ character_info['skills'][skill]['value'] }}</td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td>Wis</td>
-                                <td>Animal Handling</td>
-                                <td>+3</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>Int</td>
-                                <td>Arcana</td>
-                                <td>+3</td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -340,13 +246,13 @@
                     <div class="card-header">
                         Initiative
                     </div>
-                    <p class="card-text">+3</p>
+                    <p class="card-text">{{ character_info['initiative'] }}</p>
                 </div>
                 <div class="card h-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                     <div class="card-header">
                         Armor
                     </div>
-                    <p class="card-text">+3</p>
+                    <p class="card-text">{{ character_info['armor_class'] }}</p>
                     <div class="card-footer">
                         <small class="text-body-secondary">Class</small>
                     </div>
@@ -357,7 +263,9 @@
                     </div>
                     <p class="card-text">
                     <ul>
-                        <li>Magical Sleep</li>
+                        {% for defence in character_info['defences'] %}
+                        <li>{{ defence }}</li>
+                        {% endfor %}
                     </ul>
                     </p>
                 </div>
@@ -367,7 +275,9 @@
                     </div>
                     <p class="card-text">
                     <ul>
-                        <li>Add Active Conditions</li>
+                        {% for condition in character_info['conditions'] %}
+                        <li>{{ condition }}</li>
+                        {% endfor %}
                     </ul>
                     </p>
                 </div>
@@ -415,7 +325,5 @@
         ...
     </div>
 </div>
-
-<script type="module" src="static/dicerolling.js"></script>
 
 {% endblock %}

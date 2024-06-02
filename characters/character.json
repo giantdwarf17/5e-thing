@@ -1,0 +1,174 @@
+{
+    "name":"Bingbong",
+    "race":"Dwarf",
+    "class": [{
+        "name":"Cleric",
+        "subclass":"Light Domain",
+        "level":1
+    },
+    {
+        "name":"Barbarian",
+        "subclass":"",
+        "level":1
+    }],
+    "level":1,
+    "ability_scores": {
+      "strength": 17,
+      "dexterity": 14,
+      "constitution": 12,
+      "intelligence": 8,
+      "wisdom": 5,
+      "charisma": 2
+    },
+    "proficiency_bonus": "+3",
+    "walking_speed": 35,
+    "inspiration": 0,
+    "initiative": 0,
+    "armor_class": 10,
+    "health": {
+      "current": 45,
+      "max": 45,
+      "temp": 0
+    },
+    "defences": [],
+    "conditions": [],
+    "senses": {
+      "passive_wisdom": 14
+    },
+    "proficiencies": {
+      "armor": [],
+      "weapons": [
+        "Crossbows",
+        "Daggers"
+      ],
+      "tools": [],
+      "languages": [
+        "Common",
+        "Abyssal"
+      ]
+    },
+    "skills": {
+      "Acrobatics": {
+        "value":0,
+        "modifier":"Dex",
+        "proficient":0
+      },
+      "Animal Handling": {
+        "value":0,
+        "modifier":"Wis",
+        "proficient":0
+      },
+      "Arcana": {
+        "value":0,
+        "modifier":"Int",
+        "proficient":0
+      },
+      "Athletics": {
+        "value":0,
+        "modifier":"Str",
+        "proficient":0
+      },
+      "Deceiption": {
+        "value":0,
+        "modifier":"Cha",
+        "proficient":0
+      },
+      "History": {
+        "value":0,
+        "modifier":"His",
+        "proficient":0
+      },
+      "Insight": {
+        "value":0,
+        "modifier":"Wis",
+        "proficient":0
+      },
+      "Intimidation": {
+        "value":1,
+        "modifier":"Cha",
+        "proficient":1
+      },
+      "Investigation": {
+        "value":1,
+        "modifier":"Int",
+        "proficient":0
+      },
+      "Medicine": {
+        "value":0,
+        "modifier":"Wis",
+        "proficient":0
+      },
+      "Nature": {
+        "value":0,
+        "modifier":"Int",
+        "proficient":0
+      },
+      "Perception": {
+        "value":1,
+        "modifier":"Wis",
+        "proficient":0
+      },
+      "Performance": {
+        "value":0,
+        "modifier":"Cha",
+        "proficient":0
+      },
+      "Persuasion": {
+        "value":0,
+        "modifier":"Cha",
+        "proficient":0
+      },
+      "Religion": {
+        "value":0,
+        "modifier":"Int",
+        "proficient":0
+      },
+      "Sleight of Hand": {
+        "value":0,
+        "modifier":"Dex",
+        "proficient":0
+      },
+      "Stealth": {
+        "value":0,
+        "modifier":"Dex",
+        "proficient":0
+      },
+      "Survival": {
+        "value":0,
+        "modifier":"Wis",
+        "proficient":0
+      }
+    },
+    "spells": {},
+    "inventory": {
+      "equipment": {},
+      "backpack": {}
+    },
+    "description": {
+      "background": "Soldier",
+      "characteristics": {
+        "alignment": "neutral",
+        "gender": "",
+        "eyes": "",
+        "size": "small",
+        "height": 4,
+        "faith": "",
+        "hair": "",
+        "skin": "",
+        "age": 20,
+        "weight": 100
+      },
+      "personality_traits": [],
+      "ideals": [],
+      "bonds": [],
+      "flaws": [],
+      "appearance": ""
+    },
+    "notes": {
+      "organizations": "",
+      "allies": "",
+      "enemies": "",
+      "backstory": "",
+      "other": ""
+    }
+  }

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_file
+from markupsafe import Markup
 import requests
 import json
 import markdown
@@ -23,6 +24,8 @@ def create_race():
 def create_class():
     with open("classes.json", "r", encoding="utf8") as f:
         classes = json.load(f)['results']
+    for _class in classes:
+        _class['desc'] = Markup(markdown.markdown(_class['desc']))
     return render_template('/create/class.html', classes=classes)
 
 @app.route("/create/abilities")
@@ -50,4 +53,4 @@ def backgrounds():
     return send_file('backgrounds.json')
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True, port=5000, host="0.0.0.0")
+    app.run(port=5000, host="0.0.0.0")
